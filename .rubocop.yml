@@ -1,0 +1,26 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - server_sent_events.gemspec
+    - Gemfile
+    - Rakefile
+    - bin/**
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/Documentation:
+  Enabled: false
+
+Style/BracesAroundHashParameters:
+  EnforcedStyle: context_dependent
+
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*.rb
