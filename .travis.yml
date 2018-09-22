@@ -8,4 +8,13 @@ rvm:
 branches:
   only:
     - master
-    - /^\d+\.\d+(\.\d+)?(-\S*)?$/
+    - "/^\\d+\\.\\d+(\\.\\d+)?(-\\S*)?$/"
+
+deploy:
+  provider: rubygems
+  api_key:
+    secure: W32FF+NYh8WPcVtmG+GYN9r4E03wsrO7svKvpbsk0bArX9maSmr8K+nFglvTC8oOYlulkDw1G5a7B5dxVkL/rJ/nhUXkj09Yv1jpTezeMUAFusvS6F5uug/v4G4aVdrBDGdf4KHMAiE2gdR/7v/LaHhawsdkH1BsUjmmce9JjQGsgFkZRpvF7OWCwiJO/YA84sDrTLcO01ctOHQPQEgqvmthoe5ggoz7INNM6k+HPui0piz2I9WAGI7jaNgV7basgBi99e7+xVs5t2QjKWRuZWn1yPJC2FQlxQxHpRBUuPABT9/KgtgayFmXKjZXpgqovXYsJS7NgdCnoMicsE2rjduC3zGcIkeHnkioknONpskQe3F8d2DrfcH4TmsBj/ndZiK7bRFzAN6YiotORTD2Fs5mJvcNNEC+pFo5daX9MtnX8Q2a8hfbL42nHvQ/lAA8mIyMdffhmpe5GVash91aazOLR3mVz786llUVYFTHWj4HYrAz/9on4nBmW8s8UsrYjae5IAuloH6wULm5XcGGDglUSpIfgvTCbkvut5CEtRLIl29STXPiJYhQ6BVmal33WY5pSJE+aX6uq8Wh1pnD72VstX4SQbuvTWq5tWPEgBW8BFZNEgY6M7dFaCuG4TYZLkkZE75cVMqtKzYpVi8Q/BDwxYdiF/1JgZrK1FxNi6Q=
+  gem: server_sent_events
+  on:
+    tags: true
+    repo: xlab-si/server-sent-events-ruby
