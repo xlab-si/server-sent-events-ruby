@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "server_sent_events/client"
 require "server_sent_events/event"
 
 RSpec.describe ServerSentEvents do
@@ -28,6 +29,18 @@ RSpec.describe ServerSentEvents do
       event.set("data", "line")
       expect { |b| described_class.listen("http://dummy.address", &b) }
         .to yield_with_args(event)
+    end
+  end
+
+  context ".create_client" do
+    it "creates new client" do
+      expect(described_class.create_client("sample.url"))
+        .to be_an_instance_of(ServerSentEvents::Client)
+    end
+
+    it "creates new client with headers" do
+      expect(described_class.create_client("sample.url", "a" => "b"))
+        .to be_an_instance_of(ServerSentEvents::Client)
     end
   end
 end
